@@ -24,36 +24,39 @@ var Column = FixedDataTable.Column;
 
 // Table data as a list of array.
  
- var rows = [ ['a1', 'b1', 'c1'],
-  ['a2', 'b3', 'c2'],
-  ['a3', 'b3', 'c3']
-];
-              // [ "Quantity", "3.00000046", "Rate", "0.02282093"];
+ var rows = [ 
+
+
+  // ['a1', 'b1', 'c1'],
+  // ['a2', 'b3', 'c2'],
+  // ['a3', 'b3', 'c3']
+
+            [ "Quantity", "3.00000046", "Rate", "0.02282093"],
         
-           // [ "Quantity", "4.27014059", "Rate", "0.02282092"],
+           [ "Quantity", "4.27014059", "Rate", "0.02282092"],
         
-           // [ "Quantity", "0.02247307", "Rate", "0.02269383"],
+           [ "Quantity", "0.02247307", "Rate", "0.02269383"],
       
-           // [ "Quantity", "250.00000000", "Rate", "0.02264279"],
+           [ "Quantity", "250.00000000", "Rate", "0.02264279"],
        
-           // [ "Quantity", "2.90256157", "Rate", "0.02264278"],
+           [ "Quantity", "2.90256157", "Rate", "0.02264278"],
         
-           // [ "Quantity", "3.27764356", "Rate", "0.02253645"],
+           [ "Quantity", "3.27764356", "Rate", "0.02253645"],
         
-           // [ "Quantity", "2.50000000", "Rate", "0.02251229"],
+           [ "Quantity", "2.50000000", "Rate", "0.02251229"],
        
-           // [ "Quantity", "1.80990560", "Rate", "0.02251195"],
+           [ "Quantity", "1.80990560", "Rate", "0.02251195"],
         
-           // [ "Quantity", "0.30000000", "Rate", "0.02249989"],
+           [ "Quantity", "0.30000000", "Rate", "0.02249989"],
         
-           // [ "Quantity", "0.22280280", "Rate", "0.02244137"];          
+           [ "Quantity", "0.22280280", "Rate", "0.02244137"]          
         
        
   // .... and more
-  ['a1', 'b1', 'c1'],
-  ['a2', 'b3', 'c2'],
-  ['a3', 'b3', 'c3']
-;
+  // ['a1', 'b1', 'c1'],
+  // ['a2', 'b3', 'c2'],
+  // ['a3', 'b3', 'c3']
+];
 
 function rowGetter(rowIndex) {
   return rows[rowIndex];
@@ -76,12 +79,28 @@ class CoinTable extends React.Component {
                 headerHeight={50}>
                 <Column
                   label="Col 1"
-                  width={3000}
-                  dataKey={4}/>
+                  width={300}
+                  dataKey={0}/>
                 <Column
                   label="Col 2"
-                width={2000}
-                dataKey={6}/>
+                width={200}
+                dataKey={1}/>
+                <Column
+                  label="Col 3"
+                width={200}
+                dataKey={2}/>
+                <Column
+                  label="Col 4"
+                width={200}
+                dataKey={3}/>
+                <Column
+                  label="Col 5"
+                width={200}
+                dataKey={4}/>
+                <Column
+                  label="Col 6"
+                width={200}
+                dataKey={5}/>
           </Table>
 
           </div>
