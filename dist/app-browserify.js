@@ -1,0 +1,1 @@
+console.error("SyntaxError: /Users/aristonlewis/Github Projects/arbitrader/js/app-browserify.js: Unexpected token (51:3) while parsing file: /Users/aristonlewis/Github Projects/arbitrader/js/app-browserify.js");

@@ -1,6 +1,7 @@
 
 @import "../bower_components/normalize-css/normalize.css";
 @import "../bower_components/typeplate-starter-kit/css/typeplate.css";
+@import "../node_modules/fixed-data-table/dist/fixed-data-table.css";
 
 /**
  * BOX-SIZING
@@ -95,3 +96,83 @@ img {
 /**
  * YOUR CODE HERE
  */
+
+ .menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    max-width: 100%;
+    top:0;
+    right:0;
+    margin: none;
+    padding: 50px 50px 50px 50px;
+ }
+ 
+
+ #settings{
+    order: 1;
+    font-size: 2rem;
+    font-family: 'Audiowide', cursive;
+    padding: 6% 1% 1% 1%;
+
+ }
+ 
+
+ .titleText {
+    order: 2;
+    font-family: 'Audiowide', cursive;
+    font-size: 4rem ;
+    wrap: no-wrap;
+ }
+
+ #info{
+    order: 3;
+    font-size: 2rem;
+    font-family: 'Audiowide', cursive;
+     padding: 6% 1% 1% 1%;
+ }
+ 
+.container {
+    
+    
+     
+ }
+
+ .table{
+    border: solid black 5px;
+    border-radius: 2%;
+    max-width: 100%   
+ }
+ hover:#settings{
+    font-size: 4rem;
+    opacity: .5;
+    border: solid purple 1px;
+
+ }
+
+ th{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+ }
+
+caption {
+    
+    font-size: 2rem;
+    font-family: 'Audiowide', cursive;
+     padding: 6% 1% 1% 1%;
+     text-align: left;
+    caption:nth child{
+        text-align: center;
+        caption:nth child{
+             text-align: right;
+    
+
+    }   
+
+    }   
+
+
+}

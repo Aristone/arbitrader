@@ -30,7 +30,7 @@ function startServer() {
     // add your proxies here.
     //
     // examples:
-    // proxify('/yummly/recipes', 'http://api.yummly.com/v1/api/recipes');
+    proxify('/arbitrader', 'http://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_NXT&depth=50');
     // proxify('/brewery/styles', 'https://api.brewerydb.com/v2/styles');
 
     // all environments
@@ -43,17 +43,17 @@ function startServer() {
     // ----
     // remove some info so we don't divulge to potential
     // attackers what platform runs the website
-    app.disable('x-powered-by')
-    // change the generic session cookie name
-    app.use(session({ secret: 'some secret', key: 'sessionId', cookie: {httpOnly: true, secure: true} }))
-    // enable overriding
-    app.use(override("X-HTTP-Method-Override"))
-    // enable CSRF protection
-    app.use(csrf())
-    app.use((req, res, next) => {
-        res.locals.csrftoken = req.csrfToken() // send the token to the browser app
-        next()
-    })
+    // app.disable('x-powered-by')
+    // // change the generic session cookie name
+    // app.use(session({ secret: 'some secret', key: 'sessionId', cookie: {httpOnly: true, secure: true} }))
+    // // enable overriding
+    // app.use(override("X-HTTP-Method-Override"))
+    // // enable CSRF protection
+    // app.use(csrf())
+    // app.use((req, res, next) => {
+    //     res.locals.csrftoken = req.csrfToken() // send the token to the browser app
+    //     next()
+    // })
     // ---------------------------
 
     http.createServer(app).listen(app.get('port'), function() {
