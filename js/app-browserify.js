@@ -24,7 +24,10 @@ var Column = FixedDataTable.Column;
 
 // Table data as a list of array.
  
- var rows = 
+ var rows = [ ['a1', 'b1', 'c1'],
+  ['a2', 'b3', 'c2'],
+  ['a3', 'b3', 'c3']
+];
               // [ "Quantity", "3.00000046", "Rate", "0.02282093"];
         
            // [ "Quantity", "4.27014059", "Rate", "0.02282092"],
