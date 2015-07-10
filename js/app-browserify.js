@@ -22,16 +22,13 @@ var FixedDataTable = require('fixed-data-table');
 var Table = FixedDataTable.Table;
 var Column = FixedDataTable.Column;
 
-// Table data as a list of array.
- 
- var rows = [ 
 
+export class MyDataTable extends React.Component{
+    constructor(props){
+        super(props)
+        this.props.rows = [
 
-  // ['a1', 'b1', 'c1'],
-  // ['a2', 'b3', 'c2'],
-  // ['a3', 'b3', 'c3']
-
-            [ "Quantity", "3.00000046", "Rate", "0.02282093"],
+           [ "Quantity", "3.00000046", "Rate", "0.02282093"],
         
            [ "Quantity", "4.27014059", "Rate", "0.02282092"],
         
@@ -49,65 +46,56 @@ var Column = FixedDataTable.Column;
         
            [ "Quantity", "0.30000000", "Rate", "0.02249989"],
         
-           [ "Quantity", "0.22280280", "Rate", "0.02244137"]          
+           [ "Quantity", "0.22280280", "Rate", "0.02244137"],          
         
+           [ "Quantity", "3.00000046", "Rate", "0.02282093"],
+        
+           [ "Quantity", "4.27014059", "Rate", "0.02282092"],
+        
+           [ "Quantity", "0.02247307", "Rate", "0.02269383"],
+      
+           [ "Quantity", "250.00000000", "Rate", "0.02264279"],
        
-  // .... and more
-  // ['a1', 'b1', 'c1'],
-  // ['a2', 'b3', 'c2'],
-  // ['a3', 'b3', 'c3']
-];
-
-function rowGetter(rowIndex) {
-  return rows[rowIndex];
-}
-
-class CoinTable extends React.Component {
-    constructor(props) {
-        super(props)
+       ]    
 
     }
+
+
+   rowGetter(rowIndex) {
+     return this.props.rows[rowIndex];
+    }
+
+
     render(){
         return (
             <div>
-            <Table
+            <Table className="table"
                 rowHeight={40}
-                rowGetter={rowGetter}
-                rowsCount={rows.length}
-                width={5000}
-                height={5000}
+                rowGetter={this.rowGetter.bind(this)}
+                rowsCount={this.props.rows.length}
+                width={800}
+                height={800}
                 headerHeight={50}>
-                <Column
-                  label="Col 1"
-                  width={300}
-                  dataKey={0}/>
-                <Column
-                  label="Col 2"
+                
+                <Column 
+                  label="Quantity"
                 width={200}
                 dataKey={1}/>
+                  
                 <Column
-                  label="Col 3"
-                width={200}
-                dataKey={2}/>
-                <Column
-                  label="Col 4"
+                  label="Rate"
                 width={200}
                 dataKey={3}/>
-                <Column
-                  label="Col 5"
-                width={200}
-                dataKey={4}/>
-                <Column
-                  label="Col 6"
-                width={200}
-                dataKey={5}/>
+                
           </Table>
 
           </div>
             )
     }
 }
-React.render(<CoinTable />, document.querySelector('.container')
+
+
+React.render(<MyDataTable />, document.querySelector('.container')
 );
 
 
