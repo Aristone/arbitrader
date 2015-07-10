@@ -143,33 +143,25 @@ img {
     transition: color 2s ease-out;
  }
  
-
-Column{
-    color:blue;
-}
 .container {
-    
-    
+    font-family: 'Exo 2', sans-serif;
+    transition: color 1s ease-in;
      
  }
- .table{
-   font-family: 'Audiowide', cursive;
-
+ .container:hover{
+     color: green;
+    transition: color 1s ease-out;
  }
 
  .table{
-    border: solid black 5px;
-    border-radius: 2%;
-    max-width: 100%   
+    font-family: 'Audiowide', cursive;  
  }
   #settings:hover{
-    opacity: .5;
     color: green;
     transition: color 2s ease-in;
  }
   #info:hover{
     color: green;
-    opacity: .5;
     transition: color 2s ease-in;
   }
  
