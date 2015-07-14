@@ -6,15 +6,41 @@ require("es5-shim")
 require("babel/register")
 require("jquery")
 
+// import {SelectComponent} from './r-select.js'
+
 var Promise = require('es6-promise').Promise,
     Backbone = require('backbone'),
-    React = require('react'),
-    cryptsy_url = 'http://pubapi.cryptsy.com/api.php?method=singleorderdata&marketid=249',
-    bittrex_url = 'https://bittrex.com/api/v1.1/public/getorderbook?market=BTC-LTC&type=both&depth=50',
-    poloniex_url = 'http://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_NXT&depth=50'
+    React = require('react'),  
+    cryptsy_url = `http://pubapi.cryptsy.com/api.php?`,
+    cryptsymkt_url = (id1) => `${cryptsy_url}&method=singleorderdata&marketid=${id1}`,
+    bittrex_url = `https://bittrex.com/api/v1.1/public/`,
+    bittrexmkt_url = (id2) => `${bittrex_url}getorderbook?market=${id2}&type=both&depth=10`,
+    poloniex_url = `https://poloniex.com/public?`,
+    poloniexmkt_url = (id3) => `${poloniex_url}command=returnOrderBook&currencyPair=${id3}&depth=10`
+        
+
+
+
+
+        console.log(
+            cryptsymkt_url(2),
+            cryptsymkt_url(3),
+            bittrexmkt_url('BTC-LTC'),
+            bittrexmkt_url('BTC-NXT'),
+            poloniexmkt_url('BTC_NXT'),
+            poloniexmkt_url('BTC_XMR')
+            )
+     
+   //http://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_XMR&depth=10
+    //https://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_NXT&depth=50
+
+
+//command=returnOrderBook&currencyPair=BTC_NXT&depth=50<----poloniex
+//method=singleorderdata&marketid=2<--- cryptsy
+//getorderbook?market=BTC-LTC&type=both&depth=50'<---bittrex
 
 // console.log(cryptsy_url)
- 
+// import {SelectComponent} from './r-select.js' 
 
 var React = require('react');
 var FixedDataTable = require('fixed-data-table');
@@ -22,6 +48,12 @@ var FixedDataTable = require('fixed-data-table');
 var Table = FixedDataTable.Table;
 var Column = FixedDataTable.Column;
 var ColumnGroup = FixedDataTable.ColumnGroup;
+
+
+// React.createClass({
+//   propTypes: {}
+// })
+
 
 export class MyDataTable extends React.Component{
     constructor(props){
@@ -67,6 +99,7 @@ export class MyDataTable extends React.Component{
 
 
     render(){
+        console.log(this.props.rows)
         return (
             <div>
             <Table 
@@ -78,7 +111,7 @@ export class MyDataTable extends React.Component{
                 height={800}
                 headerHeight={50}>
                  
-                <ColumnGroup
+       <ColumnGroup
                    fixed={true}
                    label="Bittrex">
                 <Column 

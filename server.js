@@ -30,7 +30,7 @@ function startServer() {
     // add your proxies here.
     //
     // examples:
-    proxify('/arbitrader', 'http://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_NXT&depth=50');
+    //proxify('/arbitrader', 'http://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_NXT&depth=50');
     // proxify('/brewery/styles', 'https://api.brewerydb.com/v2/styles');
 
     // all environments
