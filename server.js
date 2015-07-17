@@ -12,7 +12,8 @@ var express = require('express'),
 function startServer() {
 
     function querify(queryParamsObject){
-        return '?'+Object.keys(queryParamsObject).map(function(val, key){ return val+'='+queryParamsObject[val] }).join('&')
+        var params = Object.keys(queryParamsObject).map(function(val, key){ return val+'='+queryParamsObject[val] }).join('&')
+        return params.length === 0 ? '' : '?'+params
     }
 
     // adds a new rule to proxy a localUrl -> webUrl
@@ -24,15 +25,17 @@ function startServer() {
                 return a.replace(new RegExp(t, 'ig'), req.params[t.substr(1)])
             }, webUrl)
             req.pipe( request(remote + querify(req.query)) ).pipe(res)
+
         })
     }
 
     // add your proxies here.
-    //
-    // examples:
-    //proxify('/arbitrader', 'http://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_NXT&depth=50');
-    // proxify('/brewery/styles', 'https://api.brewerydb.com/v2/styles');
-
+    // /cryptsy/:id/
+    // examples:    
+    proxify('/:anything', 'https://poloniex.com/public?command=returnOrderBook&currencyPair=${id3}&depth=10');
+    proxify('/:anything', 'https://api.cryptsy.com/api/v2/markets/:id/:anything');
+    proxify('/:anything', 'https://bittrex.com/api/v1.1/public/:anything');
+    
     // all environments
     app.set('port', process.argv[3] || process.env.PORT || 3000)
     app.use(express.static(path.join(__dirname, '')))
