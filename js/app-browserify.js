@@ -12,7 +12,7 @@ var FixedDataTable = require('fixed-data-table'),
     Promise = require('es6-promise').Promise,
     Backbone = require('backbone'),
     React = require('react'),
-    cryptsy_url = (id4) => `http://m.blazinweb.com/arbitrader/?service=cryptsy&key=Arbitrader_3f83b56564f73f6877c57cd26cff8d7faef677a8b05b8c95f156ce2f4a38a0f533d38ec62852e61862ec6627482ecd4ae7addce389eed90f7f6431b58e552ecc&args=method%3Dmarketorders%26marketid%3D${id4}&verb=POST`,  
+    cryptsy_url = (id4) => ?
     // cryptsy_url = `https://api.cryptsy.com/api/v2`, (param=val&param1=val1)
     cryptsymkt_url = (id1) => `/markets/${id1}/orderbook`,
     // bittrex_url = `https://bittrex.com/api/v1.1/public/`,
